@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ISRO Mission Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Orbitron', Arial, sans-serif;
+      background-image: url("background.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center center;
+      color: white;
+      margin: 0;
+    }
+    /* Navbar */
+    .navbar {
+      background-color: rgba(0, 31, 63, 0.85);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar .logo {
+      color: rgb(0, 191, 255);
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    .navbar nav {
+      display: flex;
+      gap: 15px;
+    }
+    .navbar nav button {
+      background-color: rgb(0, 191, 255);
+      color: rgb(0, 31, 63);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .navbar nav button:hover {
+      background-color: rgb(255, 111, 97);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 20px 40px;
+      text-align: center;
+      background-color: rgba(8, 32, 50, 0.75);
+    }
+    .hero h2 {
+      font-size: 32px;
+      color: rgb(0, 191, 255);
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: rgb(200, 220, 255);
+      margin-top: 0;
+    }
+
+    /* Projects Section */
+    section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      color: rgb(0, 191, 255);
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .project-card {
+      background-color: rgba(8, 32, 50, 0.85);
+      width: 280px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgb(241, 239, 239);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .project-card h3, .project-card p {
+      padding: 10px;
+      margin: 0;
+    }
+    .project-card h3 {
+      color: rgb(173, 216, 230);
+      text-transform: uppercase;
+      text-shadow: 0 0 5px rgb(0, 191, 255);
+    }
+    .project-card p {
+      font-size: 14px;
+      color: rgb(230, 230, 250);
+    }
+
+    /* Static Countdown Section */
+    #countdown-section {
+      text-align: center;
+      background-color: rgba(0, 31, 63, 0.85);
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 20px rgb(0, 191, 255);
+      font-family: 'Orbitron', monospace, monospace;
+      font-size: 40px;
+      color: rgb(255, 111, 97);
+      letter-spacing: 3px;
+    }
+    #countdown-section span.launch-date {
+      display: block;
+      font-size: 24px;
+      margin-top: 15px;
+      color: rgb(255, 165, 0);
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 31, 63, 0.85);
+      color: rgb(220, 220, 220);
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo" onclick="location.href='#'">ISRO</div>
+    <nav>
+      <button onclick="location.href='#about'">About</button>
+      <button onclick="location.href='#missions'">Missions</button>
+      <button onclick="location.href='#countdown-section'">Launch Countdown</button>
+      <button onclick="location.href='#contact'">Contact</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Exploring the Cosmos with Vision</h2>
+    <p>A creatively styled tribute to ISRO’s excellence</p>
+  </section>
+
+  <section id="about">
+    <h2>About ISRO</h2>
+    <p style="text-align:center; max-width:600px; margin:auto;">
+      ISRO is India’s premier space agency, innovating and exploring for peaceful uses of outer space for the development of the nation.
+    </p>
+  </section>
+
+  <section id="missions">
+    <h2>Recent and Upcoming Missions</h2>
+    <div class="card-container">
+      <div class="project-card">
+        <img src="images/chandrayaan.jpg" alt="Chandrayaan-3">
+        <h3>Chandrayaan-3</h3>
+        <p>Lunar lander marking India’s soft landing on the Moon’s South Pole.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/aditya.jpg" alt="Aditya-L1">
+        <h3>Aditya-L1</h3>
+        <p>India's solar observatory studying the Sun's corona.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/gaganyaan.jpg" alt="Gaganyaan">
+        <h3>Gaganyaan</h3>
+        <p>Upcoming human spaceflight mission showcasing India’s astronautical capabilities.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/mangalyaan.jpg" alt="Mangalyaan">
+        <h3>Mangalyaan</h3>
+        <p>India’s first interplanetary mission to Mars.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/irnss.jpg" alt="IRNSS">
+        <h3>IRNSS</h3>
+        <p>Regional navigation satellite system enhancing GPS capabilities in India.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/gsat.jpg" alt="GSAT-29">
+        <h3>GSAT-29</h3>
+        <p>High-throughput communication satellite for digital India initiatives.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/satish.jpg" alt="Satish Dhawan">
+        <h3>Satish Dhawan</h3>
+        <p>Upcoming launch named after the ISRO pioneer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="countdown-section">
+    <h2>Next Launch Countdown</h2>
+    <div>
+      <span>🚀 Launch In:</span><br />
+      <span>12d 08h 23m 45s</span>  <!-- Static placeholder text -->
+      <span class="launch-date">Launch Date: August 15, 2025, 10:00 AM IST</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form style="max-width: 500px; margin:auto; display:flex; flex-direction:column; gap:10px;">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" style="padding:10px; background-color: rgb(0,191,255); border:none; color:#003f63; font-weight:bold; cursor:pointer;">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 ISRO Mission Portal — Proudly powered by India
+  </footer>
+
+</body>
+</html>
